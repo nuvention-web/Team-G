@@ -1,8 +1,13 @@
 # Team-G
 
-Team Members : 
+#Team Members : 
+
 Shanil Sharma
+
 Lyanne Loh
+
 Matthew Laskowski
+
 Sheridan Clayborne
+
 Siddharth Muthukumaran
