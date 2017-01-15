@@ -90,6 +90,7 @@ p {
   text-align: center;
   position: relative;
   margin: -15px 20px;
+  height: 220px;
 }
 
 .profile-card header a > img {
