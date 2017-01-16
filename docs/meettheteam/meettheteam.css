@@ -42,7 +42,10 @@ p {
   text-align: right;
 }
 a {
-  color: #888;
+    color:#3F3F3F   ;
+  font-family: sans-serif;
+   text-decoration: none;
+    font-weight: bold
 }
 
 body {

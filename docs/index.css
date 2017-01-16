@@ -42,31 +42,6 @@ a{
   font-family: sans-serif;
    text-decoration: none;
 }
-a[href='contact.html']{
-  color:white;
-  font-family: sans-serif;
-   text-decoration: none;
-}
-a[href='services.html']{
-  color:white;
-  font-family: sans-serif;
-   text-decoration: none;
-}
-a[href='https://www.android.com/intl/en_us/auto/']{
-  color:grey;
-  font-family: sans-serif;
-   text-decoration: none;
-}
-a[href='https://www.android.com/intl/en_us/one/']{
-  color:grey;
-  font-family: sans-serif;
-   text-decoration: none;
-}
-a[href='https://www.android.com/intl/en_us/play/']{
-  color:grey;
-  font-family: sans-serif;
-   text-decoration: none;
-}
 .header {
   background-image: url("http://az616578.vo.msecnd.net/files/2016/05/21/635994542683458645766607621_Korean%20Food%20Cover%202.jpg");
 background-color:white;
