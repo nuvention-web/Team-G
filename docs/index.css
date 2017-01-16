@@ -1,0 +1,104 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header{
+ height: 3em;
+ background-color: #A6DCED;
+  
+}
+
+.navbar {width: 100%;  background-color: #A6DCED;
+}
+/* make navbar to be as wide as needed to hold all links - 10pts */
+div.header ul.navbar li{
+  display: inline-block;
+  width: 22.6vw; 
+  height: 45px;
+  margin-left: -5px;
+  text-align: center;
+  background-color: #A6DCED;
+}
+
+/* make navbar links share the row and with proper padding - 10pts */
+div.header ul.navbar li{
+  display: inline-block;
+  padding-top: 10px;
+  vertical-align: top;
+}
+.navbar > li a:hover {
+  color: rgb(150, 150, 150);
+}
+/* set grey color, sans-serif font and remove underline for links - 5pts */
+a[href='index.html']{
+  color: white;
+  font-family: sans-serif;
+   text-decoration: none;
+}
+a{
+  color:white;
+  font-family: sans-serif;
+   text-decoration: none;
+}
+a[href='contact.html']{
+  color:white;
+  font-family: sans-serif;
+   text-decoration: none;
+}
+a[href='services.html']{
+  color:white;
+  font-family: sans-serif;
+   text-decoration: none;
+}
+a[href='https://www.android.com/intl/en_us/auto/']{
+  color:grey;
+  font-family: sans-serif;
+   text-decoration: none;
+}
+a[href='https://www.android.com/intl/en_us/one/']{
+  color:grey;
+  font-family: sans-serif;
+   text-decoration: none;
+}
+a[href='https://www.android.com/intl/en_us/play/']{
+  color:grey;
+  font-family: sans-serif;
+   text-decoration: none;
+}
+.header {
+  background-image: url("http://az616578.vo.msecnd.net/files/2016/05/21/635994542683458645766607621_Korean%20Food%20Cover%202.jpg");
+background-color:white;
+  background-size: cover;
+background-position: center;
+background-height:1em;
+width:100%;
+background-repeat: no-repeat;
+padding-bottom: 286px
+}
+.body{
+  width: 100%;
+  background-color: white;
+  border:solid white;
+  border-width: 0 40px;
+}
+.head{
+  margin-top:1em;
+  margin-left:0.5em;
+  font-size:xx-large;
+  color:#6C87A3;
+  text-align:left;
+}
+.body{
+  color:black;
+  text-align:justify;
+  font-size:x-large;
+  font-family: Arial;
+}
+.foot{
+  margin-top:4em;
+  text-align:center;
+  color: grey;
+  background-color:black;
+}
