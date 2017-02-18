@@ -1,0 +1,41 @@
+{
+  "name": "followerstack",
+  "version": "1.0.0",
+  "description": "We're in the business of growing your business. Using a combination of filters and key parameters, we direct your target audience to your social media platforms to grow your social media presence organically. You can be as broad or as specific as you want for your target audience, and can utilize multiple social media platforms, all on a single platform.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuvention-web/Team-G.git"
+  },
+  "keywords": [
+    "follwerstack",
+    "social",
+    "media",
+    "advertisement"
+  ],
+  "author": "Siddharth Muthukumaran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nuvention-web/Team-G/issues"
+  },
+  "homepage": "https://github.com/nuvention-web/Team-G#readme",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^2.2.1"
+  }
+}
