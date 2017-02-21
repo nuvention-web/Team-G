@@ -12,4 +12,4 @@ Sheridan Clayborne
 
 Siddharth Muthukumaran
 
-Team-G website : https://nuvention-web.github.io/Team-G/
+Development Trello: https://trello.com/b/hQ3CiMYS/followerstack
