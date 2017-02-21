@@ -39,6 +39,7 @@ handleLogIn(){
     else
       return(
         <div className="App">
+          <LogIn />
           <Home />
         </div>
       )
