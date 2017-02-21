@@ -1,48 +1,28 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Home from '../Home'
+import './Login.css'
  
 export default class LogIn extends React.Component {
 
-  constructor(){
-    super();
-    this.state = {
-      validUser : false
-    }
-  }
-
   loginClicked(e){
-    this.setState({validUser: true });
     e.preventDefault();
+    console.log("HERE")
+    this.props.authFunc();
   }
 
   render() {
-        if (!this.state.validUser) 
           return (
-           <div className="wrapper">
-              <div className="container">
-                <h1>Welcome</h1>
-                <form className="form">
-                  <input type="text" placeholder="Username" />
-                  <input type="password" placeholder="Password" />
-                  <button type="submit" id="login-button" onClick={this.loginClicked.bind(this)}>Login</button>
-                </form>
+            <div className="login-card">
+              <h1>Log-in</h1><br />
+              <form onSubmit={this.loginClicked.bind(this)}>
+                <input type="text" name="user" placeholder="Username" />
+                <input type="password" name="pass" placeholder="Password" />
+                <input type="submit" name="login" className="login login-submit" value="login" />
+              </form> 
+              <div className="login-help">
+                <a href="#">Register</a> • <a href="#">Forgot Password</a>
               </div>
-              <ul className="bg-bubbles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
             </div>
-            )
-
-         return <Home />
+          )
   }
 }
