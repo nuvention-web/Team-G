@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LogIn from './components/Login'
+//import LogIn from './components/Login'
 import Home from './components/Home'
 import * as firebase from 'firebase';
+import Landing from './components/Landing'
 
 export default class App extends React.Component {
   constructor(){
@@ -13,15 +14,6 @@ export default class App extends React.Component {
     this.handleLogIn = this.handleLogIn.bind(this);
   }
 
-  // componentDidMount(){
-  //   const rootRef = firebase.database().ref().child('react');
-  //   const speedRef = rootRef.child('speed');
-  //   speedRef.on('value',snap => {
-  //     this.setState({
-  //       speed: snap.val()
-  //     })
-  //   });
-  // }
 handleLogIn(){
   this.setState({
     validUser : true
@@ -29,19 +21,12 @@ handleLogIn(){
 }
 
   render() {
-    console.log(this.state.validUser)
-    if(!this.state.validUser)
-      return(
+    return(
         <div className="App">
-          <LogIn authFunc={this.handleLogIn}/>
-      	</div>
-      )
-    else
-      return(
-        <div className="App">
-          <LogIn />
-          <Home />
+          <Landing />
         </div>
       )
+
+
   }
 }
