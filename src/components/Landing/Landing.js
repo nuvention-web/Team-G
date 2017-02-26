@@ -47,7 +47,7 @@ handle_login(){
           <section className="section">
 
             <div className="wrapper">
-              <h2 className="section__title">Boost your social media growth</h2>
+              <h2 className="section__title">Boost your social media growth.</h2>
               <p className="section__intro">
                 Look no further. We've got you covered. Here are some of our amazing features
               </p>
