@@ -21,6 +21,7 @@ export default class LogIn extends React.Component {
 
 
 validate() {
+    firebase.auth().signOut();
     console.log("Enter validate");
     const auth = firebase.auth();
     const email = this.state.email;
