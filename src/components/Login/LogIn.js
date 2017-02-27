@@ -17,7 +17,8 @@ export default class LogIn extends React.Component {
       confirmPwd:'',
       newUsr: false,
       serv_err_msg : null,
-      validUser: false
+      validUser: false,
+      pwd_matched: false
 
     }
   }
@@ -56,18 +57,26 @@ validate() {
     const email = this.state.email;
     const pwd = this.state.pwd;
     const confirmPwd = this.state.confirmPwd;
-    this.setState({
-        newUsr: true
-    });
-    if(pwd!=confirmPwd){
+    console.log(this.state.pwd_matched);
+    console.log(pwd);
+    console.log(confirmPwd);
+    if(pwd==confirmPwd){
+        console.log("inside if");
         this.setState({
-        serv_err_msg: "These passwords don't match. Try again? "
+        pwd_matched: true
+        });
+        console.log(this.state.pwd_matched);
+    } else{
+        this.setState({
+        serv_err_msg: "These passwords don't match. Try again?"
         });
     }
+    console.log(this.state.pwd_matched);
     console.log("Enter register");
-    const auth = firebase.auth();
 
-    
+    if(this.state.pwd_matched){
+        console.log("@@@@@@@@@@@@@@@@");
+    const auth = firebase.auth();
     const promise = auth.createUserWithEmailAndPassword(email,pwd);
     promise.catch(ex => {
         this.setState({
@@ -78,6 +87,7 @@ validate() {
         
     firebase.auth().onAuthStateChanged(firebaseUser => {
        if(firebaseUser){
+           console.log(this.state.validUser)
            console.log(firebaseUser);
            this.setState({
               validUser: true
@@ -86,9 +96,14 @@ validate() {
            console.log("Not Logged In");
        }
     });
+  }
 }
 
-
+newuser() {
+      this.setState({
+        newUsr: true
+    });
+}
 
 setEmail(e){
   //console.log("email" + e.target.value)
@@ -104,7 +119,7 @@ setPwd(e){
   });
 }
 
-matchPwd(e){
+setConfirmPwd(e){
     this.setState({
         confirmPwd: e.target.value
     })
@@ -124,12 +139,12 @@ matchPwd(e){
                 <input className={formError} type="text" name="user" id="txtEmail" placeholder="Username" value={ this.state.email } onChange={ this.setEmail.bind(this) }/>
                 {this.state.serv_err_msg!=null? <span className ="form-error">{this.state.serv_err_msg}</span> : <span></span>}
                 <input className={formError} type="password" name="pass" id="txtPwd" placeholder="Password" value={ this.state.pwd } onChange={this.setPwd.bind(this)}/>
-                 {this.state.newUsr ? <input className={formError} type="password" name="cpass" id="ctxtPwd" placeholder="Confirm Password" value={ this.state.confirmPwd } onChange={this.matchPwd.bind(this)} />:<span></span>}
+                 {this.state.newUsr ? <input className={formError} type="password" name="cpass" id="ctxtPwd" placeholder="Confirm Password" value={ this.state.confirmPwd } onChange={this.setConfirmPwd.bind(this)} />:<span></span>}
                 {this.state.newUsr ? <button type="button" className="login login-submit" onClick={this.register.bind(this)}>Register</button>
               : <button type="button" className="login login-submit" onClick={this.validate.bind(this)}>Log In</button>}
               </form> 
               <div className="login-help">
-                <a href="#" onClick={this.register.bind(this)}>Register</a> • <a href="#">Forgot Password</a>
+                <a href="#" onClick={this.newuser.bind(this)}>Register</a> • <a href="#">Forgot Password</a>
               </div>
             </div>
           </div>
