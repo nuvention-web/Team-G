@@ -17,8 +17,7 @@ export default class LogIn extends React.Component {
       confirmPwd:'',
       newUsr: false,
       serv_err_msg : null,
-      validUser: false,
-      pwd_matched: false
+      validUser: false
 
     }
   }
@@ -57,25 +56,15 @@ validate() {
     const email = this.state.email;
     const pwd = this.state.pwd;
     const confirmPwd = this.state.confirmPwd;
-    console.log(this.state.pwd_matched);
     console.log(pwd);
     console.log(confirmPwd);
-    if(pwd==confirmPwd){
-        console.log("inside if");
-        this.setState({
-        pwd_matched: true
-        });
-        console.log(this.state.pwd_matched);
-    } else{
+    if(pwd!=confirmPwd){
         this.setState({
         serv_err_msg: "These passwords don't match. Try again?"
         });
     }
-    console.log(this.state.pwd_matched);
-    console.log("Enter register");
 
-    if(this.state.pwd_matched){
-        console.log("@@@@@@@@@@@@@@@@");
+    if(pwd==confirmPwd){
     const auth = firebase.auth();
     const promise = auth.createUserWithEmailAndPassword(email,pwd);
     promise.catch(ex => {
