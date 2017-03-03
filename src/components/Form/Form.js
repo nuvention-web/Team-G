@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import logo from '../../../img/logo1.png';
 import './Form.css';
+import SMForm from './SMForm.js';
 
 export default class Form extends React.Component {
 
@@ -44,63 +45,9 @@ export default class Form extends React.Component {
               </table>
             </form>
           </div>
-          <div className="smallFormSection">
-            <h3>Instagram Account</h3>
-            <form id="instaForm" method="post">
-              <table>
-                <tr>
-                  <td><label for="IUsername">Username</label></td>
-                  <td><input type="text" name="IUsername"/></td>
-                </tr>
-                <tr>
-                  <td><label for="IPassword">Password</label></td>
-                  <td><input type="password" name="IPassword"/></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><input type="submit" value="Apply Changes"/></td>
-                </tr>
-              </table>
-            </form>
-          </div>
-          <div className="smallFormSection">
-            <h3>Twitter Account</h3>
-            <form id="twitterForm" method="post">
-              <table>
-                <tr>
-                  <td><label for="TUsername">Username</label></td>
-                  <td><input type="text" name="TUsername"/></td>
-                </tr>
-                <tr>
-                  <td><label for="TPassword">Password</label></td>
-                  <td><input type="password" name="TPassword"/></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><input type="submit" value="Apply Changes"/></td>
-                </tr>
-              </table>
-            </form>
-          </div>
-          <div className="smallFormSection">
-            <h3>Facebook Account</h3>
-            <form id="facebookForm" method="post">
-              <table>
-                <tr>
-                  <td><label for="FUsername">Username</label></td>
-                  <td><input type="text" name="FUsername"/></td>
-                </tr>
-                <tr>
-                  <td><label for="FPassword">Password</label></td>
-                  <td><input type="password" name="FPassword"/></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td><input type="submit" value="Apply Changes"/></td>
-                </tr>
-              </table>
-            </form>
-          </div>
+          <SMForm type="I"/>
+          <SMForm type="T"/>
+          <SMForm type="F"/>
         </section>
       </div>
     )
