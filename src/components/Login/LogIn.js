@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 import classNames from 'classnames/bind';
 import background from '../../../img/landing.jpg'
 import Home from '../Home'
+import Form from '../Form'
  
 export default class LogIn extends React.Component {
   constructor(){
@@ -140,7 +141,7 @@ setConfirmPwd(e){
           )
       else
         return(
-          <Home />
+          <Form />
         )
   }
 }
