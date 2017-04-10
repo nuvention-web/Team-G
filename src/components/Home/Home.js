@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import logo from '../../../img/logo1.png';
 import './Home.css';
 import * as firebase from 'firebase';
-import Landing from '../Landing'
+import Landing from '../Landing';
+import Button from 'react-bootstrap/lib/Button';
 
 export default class Home extends React.Component {
 constructor(){
@@ -36,8 +37,7 @@ constructor(){
               </tr>
             </tbody>
           </table>
-
-          <h2>Hello!</h2>
+          <h2>Hello!</h2>  
         </section>
       </div>
     )
