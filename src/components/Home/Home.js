@@ -5,6 +5,7 @@ import './Home.css';
 import * as firebase from 'firebase';
 import Landing from '../Landing';
 import Button from 'react-bootstrap/lib/Button';
+import Form from '../Form';
 
 export default class Home extends React.Component {
 constructor(){
@@ -27,7 +28,7 @@ constructor(){
     if(!this.state.logOut)
     return(
       <div className="formPage">
-        <section className="formSection">
+        <section className="homeSection">
           <table className="tableClass">
             <tbody className="tbodyClass">
               <tr> 
@@ -37,7 +38,8 @@ constructor(){
               </tr>
             </tbody>
           </table>
-          <h2>Hello!</h2>  
+          <h2>Hello!</h2> 
+          <Form /> 
         </section>
       </div>
     )

@@ -6,3 +6,14 @@
     position: relative;
     width: 100%;
 }
+
+.homeSection {
+  height: 100vh;
+  text-align: left;
+  position: relative;
+  padding: 20px;
+  padding-bottom: 80px;
+  background: #4f2f60 url(../../../img/landing.jpg) center top no-repeat;
+  color: #fff;
+  overflow: hidden;
+}

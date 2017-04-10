@@ -32,11 +32,11 @@ export default class SMForm extends React.Component {
         <form id={this.handle_form_param("formid")} method="post">
           <table>
             <tr>
-              <td><label for={this.handle_form_param("username")}>Username</label></td>
+              <td><label htmlFor={this.handle_form_param("username")}>Username</label></td>
               <td><input type="text" name={this.handle_form_param("username")}/></td>
             </tr>
             <tr>
-              <td><label for={this.handle_form_param("password")}>Password</label></td>
+              <td><label htmlFor={this.handle_form_param("password")}>Password</label></td>
               <td><input type="password" name={this.handle_form_param("password")}/></td>
             </tr>
             <tr>
