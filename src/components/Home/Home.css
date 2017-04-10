@@ -1,3 +1,8 @@
 .home{
 	background-color: red;
 }
+
+.tableClass {
+    position: relative;
+    width: 100%;
+}

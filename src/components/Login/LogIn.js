@@ -141,7 +141,7 @@ setConfirmPwd(e){
           )
       else
         return(
-          <Form />
+          <Home />
         )
   }
 }
