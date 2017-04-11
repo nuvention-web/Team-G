@@ -8,12 +8,28 @@
 }
 
 .homeSection {
-  height: 100vh;
+  //height: 100vh;
   text-align: left;
   position: relative;
-  padding: 20px;
+  //padding: 20px;
   padding-bottom: 80px;
   background: #4f2f60 url(../../../img/landing.jpg) center top no-repeat;
   color: #fff;
-  overflow: hidden;
+  //overflow: hidden;
 }
+
+body { font-family: sans-serif; }
+
+#main-menu .nav-bar { list-style:none; margin-top: 40px; text-align: center;}
+#main-menu .nav-bar li { display:inline; padding:0 10px;}
+
+#main-menu .nav-bar li a {
+  text-decoration: none;
+  padding-left: 25px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+
+/* Icons courtesy of Thom : http://pixelb.in/assorted-pixel-perfect-14px-icon-set-286/ */

@@ -13,16 +13,62 @@ constructor(){
     //this.validate = this.validate.bind(this);
     //this.register = this.register.bind(this);
     this.state = {
-      logOut: false
+      logOut: false,
+      user_details: true,
+      payment: false,
+      account: false,
+      analytics: false
     }
   }
 
   handle_logout(){
     firebase.auth().signOut();
-          this.setState({
-        logOut: true
+        this.setState({
+            logOut: true
     });
   }
+
+  show_user_details(){
+      this.setState({
+          user_details: true,
+          payment: false,
+          account: false,
+          analytics: false
+    });
+  }
+
+
+  show_account(){
+    firebase.auth().signOut();
+      this.setState({
+          user_details: false,
+          payment: false,
+          account: true,
+          analytics: false
+    });
+  }
+
+
+  show_payment(){
+    firebase.auth().signOut();
+      this.setState({
+          user_details: false,
+          payment: true,
+          account: false,
+          analytics: false
+    });
+  }
+
+  show_analytics(){
+    firebase.auth().signOut();
+      this.setState({
+          user_details: false,
+          payment: false,
+          account: false,
+          analytics: true
+    });
+  }
+
 
   render() {
     if(!this.state.logOut)
@@ -34,12 +80,24 @@ constructor(){
               <tr> 
                 <td><img className="logo-image" width="100vh" height="103vh" alt="logo" src={logo} /></td>
                 <td><h1>follower#Stack</h1></td>
-                <td style={{"textAlign":"right"}}><a onClick={this.handle_logout.bind(this)} className="btn-landing-top anchor-tag" href="#">Sign Out</a></td>
               </tr>
             </tbody>
           </table>
-          <h2>Hello!</h2> 
-          <Form /> 
+          <nav id="main-menu">
+            <ul className="nav-bar">
+              <li className="nav-button-home"><a onClick={this.show_analytics.bind(this)} href="#">Analytics</a></li>
+              <li className="nav-button-services"><a onClick={this.show_user_details.bind(this)} href="#">User Details</a></li>
+              <li className="nav-button-products"><a onClick={this.show_account.bind(this)} href="#">Account</a></li>
+              <li className="nav-button-products"><a onClick={this.show_payment.bind(this)} href="#">Payment</a></li>
+              <li className="nav-button-products"><a onClick={this.handle_logout.bind(this)} href="#">Sign Out</a></li>
+            </ul>
+          </nav>
+          <h2>Hello!</h2>
+          {this.state.user_details? <Form /> : <h2></h2>}
+          {this.state.payment? <h2>Payment</h2> : <h2></h2>}
+          {this.state.account? <h2>Account</h2> : <h2></h2>}
+          {this.state.analytics? <h2>User Details</h2> : <h2></h2>}
+          
         </section>
       </div>
     )
