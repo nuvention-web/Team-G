@@ -19,7 +19,6 @@ export default class LogIn extends React.Component {
       newUsr: false,
       serv_err_msg : null,
       validUser: false
-
     }
   }
 
@@ -141,7 +140,7 @@ setConfirmPwd(e){
           )
       else
         return(
-          <Form />
+          <Home />
         )
   }
 }
