@@ -6,6 +6,7 @@ import * as firebase from 'firebase';
 import Landing from '../Landing';
 import Button from 'react-bootstrap/lib/Button';
 import Form from '../Form';
+import {Link} from "react-router-dom";
 
 export default class Home extends React.Component {
 constructor(){
@@ -88,7 +89,7 @@ constructor(){
               <li className="nav-button-home"><a onClick={this.show_analytics.bind(this)} href="#">Analytics</a></li>
               <li className="nav-button-services"><a onClick={this.show_user_details.bind(this)} href="#">User Details</a></li>
               <li className="nav-button-products"><a onClick={this.show_account.bind(this)} href="#">Account</a></li>
-              <li className="nav-button-products"><a onClick={this.show_payment.bind(this)} href="#">Payment</a></li>
+              <li className="nav-button-products"><Link to={"/details"}>Payment</Link></li>
               <li className="nav-button-products"><a onClick={this.handle_logout.bind(this)} href="#">Sign Out</a></li>
             </ul>
           </nav>
