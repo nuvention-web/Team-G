@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# a bot that either follows or unfollows users
-# author - yousefissa
 
-# NOTE: You only have to change 1 thing: Change the user info below (screen name ,consumer_key, etc.)
-# If you want to hardcode your message in, put it under senDM()
-# Know your limits with this bot. Look at the twitter API limits so you don't get locked out.
 
 
 import tweepy
