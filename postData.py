@@ -9,17 +9,17 @@ def main() :
 	print ' - adduser (create a new user)'
 	print ' - getuser (search for user)'
 	print ' - listusers (list all users)'
-	print ' - modifyuser (modify user account data)'
-	print ' - deleteuser (delete a user)\n'
-	print ' - updatesm (update or add a social media account)'
-	print ' - listusersm (list a user\'s social media accounts)'
-	print ' - deletesm (delete a social media account)\n'
-	print ' - addtp (add a user\'s target parameter)'
-	print ' - listusertp (list a user\'s target parameters)'
-	print ' - deletetp (delete a target parameter)\n'
-	print ' - getgrowth (list the follower count for user\'s social media account)'
-	print ' - getpaymentlog (list user\'s past payments)'
-	print ' - getmthpayment (list all payments for a month)'
+	# print ' - modifyuser (modify user account data)'
+	print ' - delete_user (delete a user)\n'
+	print ' - updatesm (add a social media account)'
+	print ' - list_user_sm (list a user\'s social media accounts)'
+	print ' - delete_sm (delete a social media account)\n'
+	print ' - add_tp (add a user\'s target parameter)'
+	print ' - list_user_tp (list a user\'s target parameters)'
+	print ' - delete_tp (delete a target parameter)\n'
+	print ' - get_growth (list the follower count for user\'s social media account)'
+	print ' - get_payment_log (list user\'s past payments)'
+	print ' - get_mth_payment (list all payments for a month)'
 	print ' - send_mail (send email reminder to user)'
 	req_type = raw_input('Enter request type: ')
 	
@@ -77,61 +77,61 @@ def main() :
 		else:
 			print r.text.split("\n",4)[4]
 
-	# Modify user
-	if req_type == 'modifyuser':
-		username = raw_input('Username: ')
-		print 'User\'s account data fields'
-		print ' 1) password'
-		print ' 2) company'
-		print ' 3) representative\'s name'
-		print ' 4) email'
-		print ' 5) phone'
-		print ' 6) account active'
-		print ' 7) card number'
-		print ' 8) card CVC'
-		print ' 9) card expirary date'
-		print '10) reoccuring payments'
-		print '11) monthly amount'
+	# # Modify user
+	# if req_type == 'modifyuser':
+	# 	username = raw_input('Username: ')
+	# 	print 'User\'s account data fields'
+	# 	print ' 1) password'
+	# 	print ' 2) company'
+	# 	print ' 3) representative\'s name'
+	# 	print ' 4) email'
+	# 	print ' 5) phone'
+	# 	print ' 6) account active'
+	# 	print ' 7) card number'
+	# 	print ' 8) card CVC'
+	# 	print ' 9) card expirary date'
+	# 	print '10) reoccuring payments'
+	# 	print '11) monthly amount'
 
-		modify_field = raw_input('Which field (1-11): ')
-		while int(modify_field) < 1 or int(modify_field) > 11:
-			modify_field = raw_input('Which field (1-11): ')
-		if int(modify_field) == 1:
-			modify_field = 'password'
-		elif int(modify_field) == 2:
-			modify_field = 'company'
-		elif int(modify_field) == 3:
-			modify_field = 'rep_name'
-		elif int(modify_field) == 4:
-			modify_field = 'email'
-		elif int(modify_field) == 5:
-			modify_field = 'phone'
-		elif int(modify_field) == 6:
-			modify_field = 'active'
-			print 'Account active options: Y/N'
-		elif int(modify_field) == 7:
-			modify_field = 'card_number'
-		elif int(modify_field) == 8:
-			modify_field = 'card_cvc'
-		elif int(modify_field) == 9:
-			modify_field = 'card_exp_date'
-		elif int(modify_field) == 10:
-			modify_field = 'reoccuring'
-			print 'Reoccuring payments options: Y/N'
-		elif int(modify_field) == 11:
-			modify_field = 'amount'
+	# 	modify_field = raw_input('Which field (1-11): ')
+	# 	while int(modify_field) < 1 or int(modify_field) > 11:
+	# 		modify_field = raw_input('Which field (1-11): ')
+	# 	if int(modify_field) == 1:
+	# 		modify_field = 'password'
+	# 	elif int(modify_field) == 2:
+	# 		modify_field = 'company'
+	# 	elif int(modify_field) == 3:
+	# 		modify_field = 'rep_name'
+	# 	elif int(modify_field) == 4:
+	# 		modify_field = 'email'
+	# 	elif int(modify_field) == 5:
+	# 		modify_field = 'phone'
+	# 	elif int(modify_field) == 6:
+	# 		modify_field = 'active'
+	# 		print 'Account active options: Y/N'
+	# 	elif int(modify_field) == 7:
+	# 		modify_field = 'card_number'
+	# 	elif int(modify_field) == 8:
+	# 		modify_field = 'card_cvc'
+	# 	elif int(modify_field) == 9:
+	# 		modify_field = 'card_exp_date'
+	# 	elif int(modify_field) == 10:
+	# 		modify_field = 'reoccuring'
+	# 		print 'Reoccuring payments options: Y/N'
+	# 	elif int(modify_field) == 11:
+	# 		modify_field = 'amount'
 
-		modify_value = raw_input('New field value: ')
+	# 	modify_value = raw_input('New field value: ')
 
-		payload = {'req_type': req_type, 'username': username, 'modify_field': modify_field, 'modify_value': modify_value}
-		r = requests.post(url, data=payload)
-		if 'ERROR' in r.text:
-			print 'Incorrect username. Account details not modified'
-		else:
-			print modify_field+' successfully modified'
+	# 	payload = {'req_type': req_type, 'username': username, 'modify_field': modify_field, 'modify_value': modify_value}
+	# 	r = requests.post(url, data=payload)
+	# 	if 'ERROR' in r.text:
+	# 		print 'Incorrect username. Account details not modified'
+	# 	else:
+	# 		print modify_field+' successfully modified'
 
 	# Delete user
-	if req_type == 'deleteuser':
+	if req_type == 'delete_user':
 		username = raw_input('Username: ')
 
 		payload = {'req_type': req_type, 'username': username}
@@ -148,7 +148,7 @@ def main() :
 	# Add/update SM account
 	if req_type == 'updatesm':
 		username = raw_input('Username: ')
-		sm_platform = raw_input('Social media platform (Instagram, Twitter, or Facebook): ')
+		sm_platform = raw_input('Social media platform (instagram, twitter, or facebook): ')
 		sm_username = raw_input('Social media account username: ')
 		sm_password = raw_input('Social media account password: ')
 
@@ -160,7 +160,7 @@ def main() :
 			print sm_platform+' account updated'
 
 	# List user's SM accounts
-	if req_type == 'listusersm':
+	if req_type == 'list_user_sm':
 		username = raw_input('Username: ')
 
 		payload = {'req_type': req_type, 'username': username}
@@ -171,7 +171,7 @@ def main() :
 			print r.text.split("\n",4)[4]
 
 	# Delete SM account
-	if req_type == 'deletesm':
+	if req_type == 'delete_sm':
 		username = raw_input('Username: ')
 		sm_platform = raw_input('Social media platform (Instagram, Twitter, or Facebook): ')
 
@@ -185,7 +185,7 @@ def main() :
 	# --------------------------------- Target Parameters -------------------------------
 
 	# Add target parameter
-	if req_type == 'addtp':
+	if req_type == 'add_tp':
 		username = raw_input('Username: ')
 		param_type = raw_input('Target parameter type: ')
 		param_description = raw_input('Target parameter description: ')
@@ -198,7 +198,7 @@ def main() :
 			print 'Target parameter added'
 
 	# List user's target parameters
-	if req_type == 'listusertp':
+	if req_type == 'list_user_tp':
 		username = raw_input('Username: ')
 
 		payload = {'req_type': req_type, 'username': username}
@@ -209,7 +209,7 @@ def main() :
 			print r.text.split("\n",4)[4]
 
 	# Delete target parameter
-	if req_type == 'deletetp':
+	if req_type == 'delete_tp':
 		username = raw_input('Username: ')
 		param_type = raw_input('Target parameter type: ')
 		param_description = raw_input('Target parameter description: ')
@@ -224,7 +224,7 @@ def main() :
 	# --------------------------- Social Media Account Growth ---------------------------
 
 	# List user's social media account growth
-	if req_type == 'getgrowth':
+	if req_type == 'get_growth':
 		username = raw_input('Username: ')
 		sm_platform = raw_input('Social media platform (Instagram, Twitter, or Facebook): ')
 
@@ -238,7 +238,7 @@ def main() :
 	# ------------------------------------ Payment Log ---------------------------------
 
 	# List user's payment log
-	if req_type == 'getpaymentlog':
+	if req_type == 'get_payment_log':
 		username = raw_input('Username: ')
 
 		payload = {'req_type': req_type, 'username': username}
@@ -249,7 +249,7 @@ def main() :
 			print r.text.split("\n",4)[4]
 
 	# Get all payments for a month
-	if req_type == 'getmthpayment':
+	if req_type == 'get_mth_payment':
 		mmyy = raw_input('Month (MMYY): ')
 
 		payload = {'req_type': req_type, 'mmyy': mmyy}
