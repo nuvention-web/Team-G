@@ -11776,11 +11776,7 @@ var Home = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this));
 
     _this.state = {
-      logOut: false,
-      user_details: true,
-      payment: false,
-      account: false,
-      analytics: false
+      logOut: false
     };
     return _this;
   }
@@ -11791,49 +11787,6 @@ var Home = function (_React$Component) {
       firebase.auth().signOut();
       this.setState({
         logOut: true
-      });
-    }
-  }, {
-    key: 'show_user_details',
-    value: function show_user_details() {
-      this.setState({
-        user_details: true,
-        payment: false,
-        account: false,
-        analytics: false
-      });
-    }
-  }, {
-    key: 'show_account',
-    value: function show_account() {
-      firebase.auth().signOut();
-      this.setState({
-        user_details: false,
-        payment: false,
-        account: true,
-        analytics: false
-      });
-    }
-  }, {
-    key: 'show_payment',
-    value: function show_payment() {
-      firebase.auth().signOut();
-      this.setState({
-        user_details: false,
-        payment: true,
-        account: false,
-        analytics: false
-      });
-    }
-  }, {
-    key: 'show_analytics',
-    value: function show_analytics() {
-      firebase.auth().signOut();
-      this.setState({
-        user_details: false,
-        payment: false,
-        account: false,
-        analytics: true
       });
     }
   }, {
@@ -11867,59 +11820,15 @@ var Home = function (_React$Component) {
                     null,
                     'follower#Stack'
                   )
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'nav',
-            { id: 'main-menu' },
-            _react2.default.createElement(
-              'ul',
-              { className: 'nav-bar' },
-              _react2.default.createElement(
-                'li',
-                { className: 'nav-button-home' },
+                ),
                 _react2.default.createElement(
-                  'a',
-                  { onClick: this.show_analytics.bind(this), href: '#' },
-                  'Analytics'
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                { className: 'nav-button-services' },
-                _react2.default.createElement(
-                  'a',
-                  { onClick: this.show_user_details.bind(this), href: '#' },
-                  'User Details'
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                { className: 'nav-button-products' },
-                _react2.default.createElement(
-                  'a',
-                  { onClick: this.show_account.bind(this), href: '#' },
-                  'Account'
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                { className: 'nav-button-products' },
-                _react2.default.createElement(
-                  'a',
-                  { onClick: this.show_payment.bind(this), href: '#' },
-                  'Payment'
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                { className: 'nav-button-products' },
-                _react2.default.createElement(
-                  'a',
-                  { onClick: this.handle_logout.bind(this), href: '#' },
-                  'Sign Out'
+                  'td',
+                  { style: { "textAlign": "right" } },
+                  _react2.default.createElement(
+                    'a',
+                    { onClick: this.handle_logout.bind(this), className: 'btn-landing-top anchor-tag', href: '#' },
+                    'Sign Out'
+                  )
                 )
               )
             )
@@ -11929,22 +11838,7 @@ var Home = function (_React$Component) {
             null,
             'Hello!'
           ),
-          this.state.user_details ? _react2.default.createElement(_Form2.default, null) : _react2.default.createElement('h2', null),
-          this.state.payment ? _react2.default.createElement(
-            'h2',
-            null,
-            'Payment'
-          ) : _react2.default.createElement('h2', null),
-          this.state.account ? _react2.default.createElement(
-            'h2',
-            null,
-            'Account'
-          ) : _react2.default.createElement('h2', null),
-          this.state.analytics ? _react2.default.createElement(
-            'h2',
-            null,
-            'User Details'
-          ) : _react2.default.createElement('h2', null)
+          _react2.default.createElement(_Form2.default, null)
         )
       );else return _react2.default.createElement(_Landing2.default, null);
     }
@@ -12259,6 +12153,7 @@ var LogIn = function (_React$Component) {
       newUsr: false,
       serv_err_msg: null,
       validUser: false
+
     };
     return _this;
   }
@@ -13410,7 +13305,7 @@ exports = module.exports = __webpack_require__(47)();
 
 
 // module
-exports.push([module.i, ".formPage {\r\n  box-sizing: border-box;\r\n  font-family: \"Merriweather\", sans-serif;\r\n  font-size: 16px;\r\n  line-height: 1.5;\r\n}\r\n\r\n.formPage .logo-image {\r\n  display: inline-block;\r\n}\r\n\r\n.formPage h1 {\r\n  display: inline-block;\r\n  font: 700 60px/1 \"Dancing Script\", cursive;\r\n  margin-left: 20px;\r\n  margin-bottom: 20px;\r\n  margin-top: 0px;\r\n}\r\n\r\n.formSection {\r\n  //height: 100vh;\r\n  text-align: left;\r\n  position: relative;\r\n  padding: 20px;\r\n  padding-bottom: 80px;\r\n  //background: #4f2f60 url(" + __webpack_require__(37) + ") center top no-repeat;\r\n  color: #fff;\r\n  overflow: hidden;\r\n}\r\n\r\n.smallFormSection {\r\n  background:rgba(0, 0, 0, 0.5);\r\n  display: inline-block;\r\n  padding: 10px;\r\n  margin: 5px;\r\n  clear: none;\r\n  border-radius: 10px;\r\n}\r\n\r\n.formPage td {\r\n  padding: 5px;\r\n}\r\n\r\n.formPage table tr:first-child td:first-child {\r\n  width: 100px;\r\n}\r\n.formPage table tr td:first-child {\r\n  text-align: right;\r\n}\r\n\r\n.formPage input {\r\n  width: calc(50vw - 150px);\r\n  border: 0;\r\n  height: 30px;\r\n  padding: 2px;\r\n}\r\n\r\n.formPage input[type=text]:hover,\r\n.formPage input[type=password]:hover {\r\n  box-shadow: inset 0 0 1px #000;\r\n}\r\n\r\n.formPage input[type=submit] {\r\n  background: #4d90fe;\r\n  color: #fff;\r\n  font-weight: bold;\r\n  width: 50%;\r\n  float: right;\r\n  height: 30px;\r\n  box-sizing: content-box;\r\n}\r\n\r\n.formPage input[type=submit]:hover {\r\n  background: #357ae8;\r\n}\r\n\r\n.formPage input[type=password] {\r\n  margin: 0px;\r\n  border: 0px;\r\n  height: 30px;\r\n  box-sizing: content-box;\r\n}\r\n\r\n@media only screen and (max-width: 1000px) {\r\n  .formPage input {\r\n    width:calc(91vw - 200px);\r\n  }\r\n}\r\n", ""]);
+exports.push([module.i, ".formPage {\r\n  box-sizing: border-box;\r\n  font-family: \"Merriweather\", sans-serif;\r\n  font-size: 16px;\r\n  line-height: 1.5;\r\n}\r\n\r\n.formPage .logo-image {\r\n  display: inline-block;\r\n}\r\n\r\n.formPage h1 {\r\n  display: inline-block;\r\n  font: 700 60px/1 \"Dancing Script\", cursive;\r\n  margin-left: 20px;\r\n  margin-bottom: 20px;\r\n  margin-top: 0px;\r\n}\r\n\r\n.formSection {\r\n  height: 100vh;\r\n  text-align: left;\r\n  position: relative;\r\n  padding: 20px;\r\n  padding-bottom: 80px;\r\n  //background: #4f2f60 url(" + __webpack_require__(37) + ") center top no-repeat;\r\n  color: #fff;\r\n  overflow: hidden;\r\n}\r\n\r\n.smallFormSection {\r\n  background:rgba(0, 0, 0, 0.5);\r\n  display: inline-block;\r\n  padding: 10px;\r\n  margin: 5px;\r\n  clear: none;\r\n  border-radius: 10px;\r\n}\r\n\r\n.formPage td {\r\n  padding: 5px;\r\n}\r\n\r\n.formPage table tr:first-child td:first-child {\r\n  width: 100px;\r\n}\r\n.formPage table tr td:first-child {\r\n  text-align: right;\r\n}\r\n\r\n.formPage input {\r\n  width: calc(50vw - 150px);\r\n  border: 0;\r\n  height: 30px;\r\n  padding: 2px;\r\n}\r\n\r\n.formPage input[type=text]:hover,\r\n.formPage input[type=password]:hover {\r\n  box-shadow: inset 0 0 1px #000;\r\n}\r\n\r\n.formPage input[type=submit] {\r\n  background: #4d90fe;\r\n  color: #fff;\r\n  font-weight: bold;\r\n  width: 50%;\r\n  float: right;\r\n  height: 30px;\r\n  box-sizing: content-box;\r\n}\r\n\r\n.formPage input[type=submit]:hover {\r\n  background: #357ae8;\r\n}\r\n\r\n.formPage input[type=password] {\r\n  margin: 0px;\r\n  border: 0px;\r\n  height: 30px;\r\n  box-sizing: content-box;\r\n}\r\n\r\n@media only screen and (max-width: 1000px) {\r\n  .formPage input {\r\n    width:calc(91vw - 200px);\r\n  }\r\n}\r\n", ""]);
 
 // exports
 
@@ -13424,7 +13319,7 @@ exports = module.exports = __webpack_require__(47)();
 
 
 // module
-exports.push([module.i, ".home{\r\n\tbackground-color: red;\r\n}\r\n\r\n.tableClass {\r\n    position: relative;\r\n    width: 100%;\r\n}\r\n\r\n.homeSection {\r\n  //height: 100vh;\r\n  text-align: left;\r\n  position: relative;\r\n  //padding: 20px;\r\n  padding-bottom: 80px;\r\n  background: #4f2f60 url(" + __webpack_require__(37) + ") center top no-repeat;\r\n  color: #fff;\r\n  //overflow: hidden;\r\n}\r\n\r\nbody { font-family: sans-serif; }\r\n\r\n#main-menu .nav-bar { list-style:none; margin-top: 40px; text-align: center;}\r\n#main-menu .nav-bar li { display:inline; padding:0 10px;}\r\n\r\n#main-menu .nav-bar li a {\r\n  text-decoration: none;\r\n  padding-left: 25px;\r\n  text-transform: uppercase;\r\n  color: #fff;\r\n  text-shadow: 1px 1px 1px #ccc;\r\n}\r\n\r\n\r\n/* Icons courtesy of Thom : http://pixelb.in/assorted-pixel-perfect-14px-icon-set-286/ */", ""]);
+exports.push([module.i, ".home{\r\n\tbackground-color: red;\r\n}\r\n\r\n.tableClass {\r\n    position: relative;\r\n    width: 100%;\r\n}\r\n\r\n.homeSection {\r\n  height: 100vh;\r\n  text-align: left;\r\n  position: relative;\r\n  padding: 20px;\r\n  padding-bottom: 80px;\r\n  background: #4f2f60 url(" + __webpack_require__(37) + ") center top no-repeat;\r\n  color: #fff;\r\n  overflow: hidden;\r\n}", ""]);
 
 // exports
 
