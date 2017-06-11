@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 //import LogIn from './components/Login'
 import Home from './components/Home'
 import * as firebase from 'firebase';
-import Landing from './components/Landing'
+import Landing from './components/Landing';
+import Form from './components/Form';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 export default class App extends React.Component {
   constructor(){
@@ -23,8 +25,13 @@ handleLogIn(){
   render() {
     return(
         <div className="App">
-          <Landing />
+        <BrowserRouter>
+            <Route path="/" component={Landing} >
+            <Route path={"details"} component={Form} />
+            </Route>
+        </BrowserRouter>
         </div>
+        
       )
 
 
