@@ -11,7 +11,7 @@ def main() :
 	print ' - listusers (list all users)'
 	# print ' - modifyuser (modify user account data)'
 	print ' - delete_user (delete a user)\n'
-	print ' - updatesm (add a social media account)'
+	# print ' - updatesm (add a social media account)'
 	print ' - list_user_sm (list a user\'s social media accounts)'
 	print ' - delete_sm (delete a social media account)\n'
 	print ' - add_tp (add a user\'s target parameter)'
@@ -190,7 +190,7 @@ def main() :
 		param_type = raw_input('Target parameter type: ')
 		param_description = raw_input('Target parameter description: ')
 
-		payload = {'req_type': req_type, 'username': username, 'param_type': param_type, 'param_description': param_description}
+		payload = {'req_type': req_type, 'username': username, 'param_type': param_type, 'param_desc': param_description}
 		r = requests.post(url, data=payload)
 		if 'ERROR' in r.text:
 			print 'Incorrect username or param_type. Target parameter not added'
@@ -212,9 +212,9 @@ def main() :
 	if req_type == 'delete_tp':
 		username = raw_input('Username: ')
 		param_type = raw_input('Target parameter type: ')
-		param_description = raw_input('Target parameter description: ')
+		# param_description = raw_input('Target parameter description: ')
 
-		payload = {'req_type': req_type, 'username': username, 'param_type': param_type, 'param_description': param_description}
+		payload = {'req_type': req_type, 'username': username, 'param_type': param_type}
 		r = requests.post(url, data=payload)
 		if 'ERROR' in r.text:
 			print 'Incorrect username or param_type. Target parameter not deleted'
@@ -250,9 +250,9 @@ def main() :
 
 	# Get all payments for a month
 	if req_type == 'get_mth_payment':
-		mmyy = raw_input('Month (MMYY): ')
+		mmyy = raw_input('Month (YYYY-MM): ')
 
-		payload = {'req_type': req_type, 'mmyy': mmyy}
+		payload = {'req_type': req_type, 'yyyy-mm': mmyy}
 		r = requests.post(url, data=payload)
 		if 'ERROR' in r.text:
 			print 'Enter month in MMYY format (Jan 2017 as 0117)'
